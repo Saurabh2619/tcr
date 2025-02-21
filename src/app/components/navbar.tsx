@@ -7,9 +7,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="top-0 left-0 h-12 w-full bg-primary text-secondary rounded-b-xl shadow-lg">
+    <nav className="top-0 left-0 h-14 w-full bg-primary text-secondary rounded-b-xl shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-full items-center">
+        <div className="flex justify-between h-full items-center py-2">
           <div className="text-2xl font-bold drop-shadow-sm">SSTechDevs</div>
 
           {/* Desktop Menu */}
@@ -20,7 +20,7 @@ export default function Navbar() {
             <Link href="/mba">MBA</Link>
           </div>
 
-          {/* Mobile Menu Button (Hidden when menu opens) */}
+          {/* Mobile Menu Button */}
           {!isOpen && (
             <button className="md:hidden text-2xl" style={{ color: "#f6c52a" }} onClick={() => setIsOpen(true)}>
               ☰
@@ -29,18 +29,18 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu with AnimatePresence */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             key="mobile-menu"
-            initial={{ x: "-100%" }} // Start off-screen to the left
-            animate={{ x: 0 }} // Slide in from left
-            exit={{ x: "-100%" }} // Slide out to left
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
             className="fixed top-0 left-0 h-full w-64 bg-primary text-secondary shadow-lg p-6 md:hidden"
           >
-            {/* Close Button inside Menu (Same color as Hamburger) */}
+            {/* Close Button */}
             <button
               className="absolute top-4 right-4 text-2xl"
               style={{ color: "#f6c52a" }}

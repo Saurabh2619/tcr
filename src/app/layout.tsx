@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import "./globals.css";
-// import Navbar from "./components/navbar";
+import Navbar from "./components/navbar";
 
 export const metadata: Metadata = {
   title: "The College Reviews",
@@ -12,15 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        {/* <Navbar /> */}
-        <nav>
-          <ul className="flex justify-center items-center font-bold space-x-8">
-            <Link href="/"><li>Home</li></Link>
-            <Link href="/about"><li>About</li></Link>
-            <Link href="/contact"><li>Contact</li></Link>
-            <Link href="/mba"><li>MBA</li></Link>
-          </ul>
-        </nav>
+        <Navbar/>
         <main>{children}</main>
       </body>
     </html>
