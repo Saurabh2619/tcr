@@ -1,63 +1,55 @@
-"use client";
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
+import { Montserrat, Lato } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-montserrat",
+});
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-montserrat",
+});
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="top-0 left-0 h-14 w-full bg-primary text-secondary rounded-b-xl shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-full items-center py-2">
-          <div className="text-2xl font-bold drop-shadow-sm">SSTechDevs</div>
+    <nav className="bg-white shadow-md sticky top-0 z-50 h-16 flex items-center">
+      <div className="container mx-auto flex justify-between items-center p-4 ">
+        {/* Logo */}
+        <Link href="/" className={`text-2xl font-bold text-blue-600 ${montserrat.className}`}>
+          SSTechPhile
+        </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6 text-lg font-bold">
-            <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/contact">Contact</Link>
-            <Link href="/mba">MBA</Link>
-          </div>
+        {/* Hamburger Button */}
+        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
 
-          {/* Mobile Menu Button */}
-          {!isOpen && (
-            <button className="md:hidden text-2xl" style={{ color: "#f6c52a" }} onClick={() => setIsOpen(true)}>
-              ☰
-            </button>
-          )}
-        </div>
+        {/* Desktop Menu */}
+        <ul className={`hidden md:flex space-x-6 ${lato.className} text-md`}>
+          <li><Link href="/" className="hover:text-blue-500">Home</Link></li>
+          <li><Link href="/mba" className="hover:text-blue-500">MBA</Link></li>
+          <li><Link href="/about" className="hover:text-blue-500">About</Link></li>
+          <li><Link href="/contact" className="hover:text-blue-500">Contact</Link></li>
+        </ul>
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            key="mobile-menu"
-            initial={{ x: "-100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "-100%" }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="fixed top-0 left-0 h-full w-64 bg-primary text-secondary shadow-lg p-6 md:hidden"
-          >
-            {/* Close Button */}
-            <button
-              className="absolute top-4 right-4 text-2xl"
-              style={{ color: "#f6c52a" }}
-              onClick={() => setIsOpen(false)}
-            >
-              ✖
-            </button>
-
-            <div className="mt-10 space-y-4 text-lg font-bold">
-              <Link href="/" className="block hover:text-gray-400" onClick={() => setIsOpen(false)}>Home</Link>
-              <Link href="/about" className="block hover:text-gray-400" onClick={() => setIsOpen(false)}>About</Link>
-              <Link href="/contact" className="block hover:text-gray-400" onClick={() => setIsOpen(false)}>Contact</Link>
-              <Link href="/mba" className="block hover:text-gray-400" onClick={() => setIsOpen(false)}>MBA</Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isOpen && (
+        <div className="md:hidden bg-white shadow-md absolute top-full left-0 w-full p-4 space-y-4 text-center">
+          <Link href="/" className="block hover:text-blue-500" onClick={() => setIsOpen(false)}>Home</Link>
+          <Link href="/mba" className="block hover:text-blue-500" onClick={() => setIsOpen(false)}>MBA</Link>
+          <Link href="/about" className="block hover:text-blue-500" onClick={() => setIsOpen(false)}>About</Link>
+          <Link href="/contact" className="block hover:text-blue-500" onClick={() => setIsOpen(false)}>Contact</Link>
+        </div>
+      )}
     </nav>
   );
 }

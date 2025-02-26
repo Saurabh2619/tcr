@@ -12,6 +12,10 @@ export default {
         primary: '#03638d',
         secondary: '#f6c52a',
       },
+      fontFamily: {
+        montserrat: "var(--font-montserrat)",
+         raleway: "var(--font-raleway)",
+      },
     },
   },
   plugins: [],
