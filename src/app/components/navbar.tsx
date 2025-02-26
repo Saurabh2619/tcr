@@ -100,7 +100,9 @@ export default function Navbar() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 + index * 0.15, duration: 0.5, ease: "easeOut" }}
                   >
-                    <Link href={`/${item.toLowerCase()}`} className="hover:text-blue-500 text-xl font-semibold" onClick={() => setIsOpen(false)}>
+                    <Link href={item.toLowerCase() === "home" ? "/" : `/${item.toLowerCase()}`} 
+                    className="hover:text-blue-500 text-xl font-semibold" 
+                    onClick={() => setIsOpen(false)}>
                       {item}
                     </Link>
                   </motion.div>
