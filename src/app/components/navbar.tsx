@@ -21,25 +21,23 @@ const lato = Lato({
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Disable scrolling when mobile menu is open
-  useEffect(() => {
+  useEffect(() => {     // Disable scrolling when mobile menu is open
     if (isOpen) {
       document.body.classList.add("overflow-hidden");
     } else {
       document.body.classList.remove("overflow-hidden");
     }
-    return () => document.body.classList.remove("overflow-hidden");
   }, [isOpen]);
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50 h-16 flex items-center">
+    <nav className="bg-white shadow-md sticky top-0 z-50 h-16 flex items-center mb-3">
       <div className="container mx-auto flex justify-between items-center p-4 w-full">
-        {/* Logo (Always Visible) */}
-        <Link href="/" className={`text-2xl font-bold text-blue-600 ${montserrat.className}`}>
+        
+        <Link href="/" className={`text-2xl font-bold text-blue-600 ${montserrat.className}`}> {/* Logo */}
           SSTechPhile
         </Link>
 
-        {/* Animated Hamburger Button */}
+          {/* Animated Hamburger Button */}
         <motion.button
           className="md:hidden z-50"
           onClick={() => setIsOpen(!isOpen)}
@@ -82,9 +80,9 @@ export default function Navbar() {
             >
               {/* Logo in Menu */}
               <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
+                // initial={{ opacity: 0, y: -20 }}
+                // animate={{ opacity: 1, y: 0 }}
+                // transition={{ duration: 0.4 }}
               >
                 <Link href="/" className={`text-3xl font-bold text-blue-600 mb-6 ${montserrat.className}`} onClick={() => setIsOpen(false)}>
                   SSTechPhile
