@@ -48,7 +48,7 @@ export default function Navbar() {
         </motion.button>
 
         {/* Desktop Menu */}
-        <ul className={`hidden md:flex space-x-6 ${lato.className} text-md`}>
+        <ul className={`hidden md:flex space-x-10  ${lato.className} text-md`}>
           <li><Link href="/" className="hover:text-blue-500">Home</Link></li>
           <li><Link href="/mba" className="hover:text-blue-500">MBA</Link></li>
           <li><Link href="/about" className="hover:text-blue-500">About</Link></li>
