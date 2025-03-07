@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { supabase } from "../../lib/supabaseClient";
+// import Slider from "./components/slider";
 export default function Home() {
   // const [data, setData] = useState<any[]>([]);
   // const [error, setError] = useState<string | null>(null);
@@ -22,12 +23,23 @@ export default function Home() {
 
   return (
     <>
-      <div className="lg:mx-20">
-        Hello <span className="font-bold">SRH</span>. A layout is UI that is shared between multiple pages.
-        On navigation, layouts preserve state, remain interactive, and do not rerender.
-
-    
+      <div className="flex flex-col items-center justify-center h-screen gap-[5px]">
+      <div>light shade ⬇️</div>
+        <div className="text-[50px] font-bold text-[#42a5f5]">
+          Guru Mantra 
+        </div> 
+        <div>Original ⬇️</div>
+        <div className="text-[50px] font-bold text-[#2196f3]">
+          Guru Mantra
+        </div>
+        <div>Dark shade ⬇️</div>
+        <div className="text-[50px] font-bold text-[#1e88e5]">
+          Guru Mantra
+        </div>
+        {/* <Slider/> */}
       </div>
+
+      
     </>
   );
 }
