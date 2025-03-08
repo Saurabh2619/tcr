@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { supabase } from "../../lib/supabaseClient";
-// import Slider from "./components/slider";
+import SwiperComponent from "./components/slider";
+
+
 export default function Home() {
   // const [data, setData] = useState<any[]>([]);
   // const [error, setError] = useState<string | null>(null);
@@ -36,7 +38,7 @@ export default function Home() {
         <div className="text-[50px] font-bold text-[#1e88e5]">
           Guru Mantra
         </div>
-        {/* <Slider/> */}
+        <SwiperComponent/>
       </div>
 
       
