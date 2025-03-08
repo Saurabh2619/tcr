@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image"; // ✅ Import Next.js Image Component
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -42,7 +43,7 @@ const SwiperComponent = () => {
         speed={700}
         breakpoints={{
           320: { slidesPerView: 1 }, // 📱 Mobile: Show 1 image
-          640: { slidesPerView: 2 }, // 📱 Bigger Mobile: Show 2 images 
+          640: { slidesPerView: 2 }, // 📱 Bigger Mobile: Show 2 images
           768: { slidesPerView: 3 }, // 📱 Tablets: Show 3 images
           1024: { slidesPerView: 4 }, // 💻 Laptops: Show 4 images
           1280: { slidesPerView: 5 }, // 🖥️ Large Screens: Show 5 images
@@ -51,16 +52,17 @@ const SwiperComponent = () => {
       >
         {images.map((img, index) => (
           <SwiperSlide key={index} className="flex justify-center items-center">
-            <img
+            <Image
               src={img}
               alt={`Slide ${index + 1}`}
+              width={500} // ✅ Adjust width
+              height={256} // ✅ Adjust height
               className="w-full h-64 object-cover rounded-lg transition-transform duration-500 ease-in-out hover:scale-105"
+              priority={index === 0} // ✅ Optimize first image
             />
           </SwiperSlide>
         ))}
       </Swiper>
-
-    
     </div>
   );
 };
