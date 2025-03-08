@@ -42,7 +42,7 @@ const SwiperComponent = () => {
         speed={700}
         breakpoints={{
           320: { slidesPerView: 1 }, // 📱 Mobile: Show 1 image
-          640: { slidesPerView: 2 }, // 📱 Bigger Mobile: Show 2 images
+          640: { slidesPerView: 2 }, // 📱 Bigger Mobile: Show 2 images 
           768: { slidesPerView: 3 }, // 📱 Tablets: Show 3 images
           1024: { slidesPerView: 4 }, // 💻 Laptops: Show 4 images
           1280: { slidesPerView: 5 }, // 🖥️ Large Screens: Show 5 images
