@@ -60,8 +60,7 @@ const SwiperComponent = () => {
         ))}
       </Swiper>
 
-      {/* Pagination moved below the slider */}
-      <div className="swiper-pagination !relative mt-4"></div>
+    
     </div>
   );
 };
