@@ -17,7 +17,7 @@ export default function Home() {
   //       setError(error.message);
   //     } else {
   //       setData(data || []);
-  //     }
+  //     } 
   //   };
 
   //   fetchData();
@@ -36,7 +36,7 @@ export default function Home() {
         </div>
         <div>Dark shade ⬇️</div>
         <div className="text-[50px] font-bold text-[#1e88e5]">
-          Guru Mantra
+          Guru Mantra 123
         </div>
         <SwiperComponent/>
       </div>
