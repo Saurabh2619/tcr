@@ -1,7 +1,7 @@
 "use client"; // Ensure this runs in the browser
 
-import { useState, useEffect } from "react";
-import { supabase } from "../../lib/supabaseClient";
+// import { useState, useEffect } from "react";
+// import { supabase } from "../../lib/supabaseClient";
 import SwiperComponent from "./components/slider";
 
 
