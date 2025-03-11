@@ -3,6 +3,7 @@
 // import { useState, useEffect } from "react";
 // import { supabase } from "../../lib/supabaseClient";
 import SwiperComponent from "./components/slider";
+import MainSlider from "./components/mainHighlighter";
 
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
 
   return (
     <>
+      <MainSlider/>
       <div className="flex flex-col items-center justify-center h-screen gap-[5px]">
       <div>light shade ⬇️</div>
         <div className="text-[50px] font-bold text-[#42a5f5]">
