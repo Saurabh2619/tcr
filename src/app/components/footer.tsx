@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="container mx-auto px-6 md:px-12 lg:px-20 flex flex-col md:flex-row justify-between items-center relative z-10">
         {/* Logo and Description */}
         <div className="text-center md:text-left mb-6 md:mb-0 max-w-sm">
-          <h2 className="text-3xl font-extrabold text-blue-400">SSTechPhile</h2>
+          <h2 className="text-3xl font-extrabold text-[#2196f3]">GuruMantra</h2>
           <p className="text-gray-300 mt-3 leading-relaxed">
             Your go-to platform for in-depth college details, admissions, and career guidance.
           </p>
@@ -56,7 +56,7 @@ export default function Footer() {
 
       {/* Copyright Section */}
       <div className="text-center text-gray-400 text-sm mt-10 border-t border-gray-700 pt-4 relative z-10">
-        &copy; {new Date().getFullYear()} SSTechPhile. All rights reserved.
+        &copy; {new Date().getFullYear()} GuruMantra. All rights reserved.
       </div>
     </footer>
   );

@@ -34,8 +34,8 @@ export default function Navbar() {
     <nav className="bg-white shadow-md sticky top-0 z-50 h-16 flex items-center mb-3">
       <div className="container mx-auto flex justify-between items-center p-4 w-full">
         
-        <Link href="/" className={`text-2xl font-bold text-blue-600 ${montserrat.className}`}>
-          SSTechPhile
+        <Link href="/" className={`text-3xl font-bold text-[#2196f3] ${montserrat.className}`}>
+          GuruMantra
         </Link>
 
         <motion.button
@@ -48,9 +48,9 @@ export default function Navbar() {
         </motion.button>
 
         <ul className={`hidden md:flex space-x-10 ${lato.className} text-md`}>
-          <li><Link href="/" className="hover:text-blue-500">Home</Link></li>
+          <li><Link href="/" className="hover:text-[#2196f3]">Home</Link></li>
           <li className="relative group">
-            <Link href="/mba" className="hover:text-blue-500">MBA</Link>
+            <Link href="/mba" className="hover:text-[#2196f3]">MBA</Link>
           <motion.ul
               initial={{ opacity: 0, y: -10, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -59,17 +59,17 @@ export default function Navbar() {
               className="absolute left-0 hidden group-hover:flex flex-col bg-white bg-opacity-90 backdrop-blur-md shadow-2xl py-3 px-5 rounded-lg transition-all duration-300 ease-in-out border border-gray-200"
               >
               <li>
-                <Link href="/mba/cat" className="block px-6 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-md transition-all duration-200">
+                <Link href="/mba/cat" className="block px-6 py-2 text-gray-700 hover:text-[#2196f3] hover:bg-gray-100 rounded-md transition-all duration-200">
                   CAT
                 </Link>
               </li>
               <li>
-                <Link href="/mba/2" className="block px-6 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-md transition-all duration-200">
+                <Link href="/mba/2" className="block px-6 py-2 text-gray-700 hover:text-[#2196f3] hover:bg-gray-100 rounded-md transition-all duration-200">
                  2
                 </Link>
               </li>
               <li>
-                <Link href="/mba/3" className="block px-6 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-md transition-all duration-200">
+                <Link href="/mba/3" className="block px-6 py-2 text-gray-700 hover:text-[#2196f3] hover:bg-gray-100 rounded-md transition-all duration-200">
                  3
                 </Link>
               </li>
@@ -101,8 +101,8 @@ export default function Navbar() {
               className="fixed top-0 left-0 w-4/5 h-screen bg-white shadow-lg flex flex-col items-center justify-center text-lg z-50"
             >
               <motion.div>
-                <Link href="/" className={`text-3xl font-bold text-blue-600 mb-6 ${montserrat.className}`} onClick={() => setIsOpen(false)}>
-                  SSTechPhile
+                <Link href="/" className={`text-3xl font-bold text-[#2196f3] mb-6 ${montserrat.className}`} onClick={() => setIsOpen(false)}>
+                  GuruMantra
                 </Link>
               </motion.div>
 
