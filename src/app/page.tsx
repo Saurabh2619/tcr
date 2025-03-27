@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <>
       <MainSlider/>
-      <div className="flex flex-col items-center justify-center h-screen gap-[5px]">
+    {/* <div className="flex flex-col items-center justify-center h-screen">
       <div>light shade ⬇️</div>
         <div className="text-[50px] font-bold text-[#42a5f5]">
           Guru Mantra 
@@ -39,10 +39,11 @@ export default function Home() {
         <div>Dark shade ⬇️</div>
         <div className="text-[50px] font-bold text-[#1e88e5]">
           Guru Mantra 123
-        </div>
-        <SwiperComponent/>
-      </div>
-
+       </div>
+    </div> */}
+    <div className="mt-16">
+       <SwiperComponent/>
+    </div>
       
     </>
   );

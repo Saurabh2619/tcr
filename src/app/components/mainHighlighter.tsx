@@ -58,7 +58,7 @@ const MainSlider = () => {
               alt={`Slide ${index + 1}`}
               width={1920}
               height={960} // Adjust height proportionally to maintain aspect ratio
-              className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+              className="w-full h-full object-cover md:object-contain transition-transform duration-500 ease-in-out hover:scale-105"
               priority={index === 0}
             />
           </SwiperSlide>

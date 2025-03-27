@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Image from "next/image"; // ✅ Import Next.js Image Component
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -33,20 +33,21 @@ const SwiperComponent = () => {
   }, []);
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-4">
+    <div className="w-full max-w-7xl mx-auto p-4 relative ">
       <Swiper
         modules={[Pagination, Autoplay]}
-        pagination={{ clickable: true }}
+        pagination={{ el: ".custom-pagination", clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
-        spaceBetween={15} // Add spacing between slides
-        loop={images.length > 1} // Enable loop only if more than 1 image
-        speed={700}
+        spaceBetween={20}
+        loop={images.length > 1}
+        speed={600}
         breakpoints={{
-          320: { slidesPerView: 1 }, // 📱 Mobile: Show 1 image
-          640: { slidesPerView: 2 }, // 📱 Bigger Mobile: Show 2 images
-          768: { slidesPerView: 3 }, // 📱 Tablets: Show 3 images
-          1024: { slidesPerView: 4 }, // 💻 Laptops: Show 4 images
-          1280: { slidesPerView: 5 }, // 🖥️ Large Screens: Show 5 images
+          320: { slidesPerView: 1 },
+          480: { slidesPerView: 1.5 },
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 4 },
+          1280: { slidesPerView: 5 },
         }}
         className="rounded-lg shadow-lg"
       >
@@ -55,15 +56,18 @@ const SwiperComponent = () => {
             <Image
               src={img}
               alt={`Slide ${index + 1}`}
-              width={500} // ✅ Adjust width
-              height={256} // ✅ Adjust height
-              className="w-full h-64 object-cover rounded-lg transition-transform duration-500 ease-in-out hover:scale-105"
-              priority={index === 0} // ✅ Optimize first image
+              width={600}
+              height={300}
+              className="w-full h-auto object-cover rounded-lg transition-transform duration-500 ease-in-out hover:scale-110"
+              priority={index === 0}
             />
           </SwiperSlide>
         ))}
       </Swiper>
+      {/* Custom Pagination Container */}
+      <div className="custom-pagination flex justify-center space-x-2 mt-4"></div>
     </div>
+    
   );
 };
 
