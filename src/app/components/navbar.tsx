@@ -46,7 +46,7 @@ export default function Navbar() {
         isScrolled ? "bg-white shadow-md" : "bg-gray-200/10 backdrop-blur-md"
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center p-4 w-full">
+      <div className="container mx-auto flex justify-between items-center w-full">
         <Link
           href="/"
           className={`text-3xl font-bold text-[#2196f3] ${montserrat.className}`}

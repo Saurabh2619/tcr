@@ -27,6 +27,9 @@ export default function Home() {
   return (
     <>
       <MainSlider/>
+      <div className="">
+      A chiropractic adjustment, also known as spinal manipulation, is a treatment where a licensed chiropractor uses their hands or specialized instruments to apply controlled forces to spinal joints, aiming to improve movement, reduce pain, and enhance overall body function
+      </div>
     {/* <div className="flex flex-col items-center justify-center h-screen">
       <div>light shade ⬇️</div>
         <div className="text-[50px] font-bold text-[#42a5f5]">
