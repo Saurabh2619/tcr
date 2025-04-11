@@ -15,6 +15,7 @@ export default {
       fontFamily: {
         montserrat: "var(--font-montserrat)",
          raleway: "var(--font-raleway)",
+         merriweather: "var(--font-merriweather)",
       },
     },
   },
